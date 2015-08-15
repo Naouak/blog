@@ -3,10 +3,10 @@
 namespace blog\Http\Controllers\Auth;
 
 use blog\User;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Validator;
 use blog\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
-use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
 class AuthController extends Controller
 {
@@ -21,7 +21,7 @@ class AuthController extends Controller
     |
     */
 
-    use AuthenticatesAndRegistersUsers, ThrottlesLogins;
+    use AuthenticatesUsers, ThrottlesLogins;
 
     protected $redirectTo = "admin";
 
