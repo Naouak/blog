@@ -3,10 +3,10 @@
 namespace blog\Http\Controllers;
 
 use blog\Article;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 use blog\Http\Requests;
-use blog\Http\Controllers\Controller;
 
 class AdminArticleController extends Controller
 {
@@ -39,7 +39,15 @@ class AdminArticleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            "title" => 'required'
+        ]);
+        $article = new Article($request->all());
+        $article->published_at = Carbon::now();
+        $user = $request->user();
+        $user->articles()->save($article);
+
+        return redirect(action('AdminArticleController@edit', $article->id));
     }
 
     /**
@@ -50,7 +58,8 @@ class AdminArticleController extends Controller
      */
     public function show($id)
     {
-        //
+        $article = Article::findOrFail($id);
+        return view('admin.article.show', compact('article'));
     }
 
     /**
@@ -61,7 +70,8 @@ class AdminArticleController extends Controller
      */
     public function edit($id)
     {
-        //
+        $article = Article::findOrFail($id);
+        return view('admin.article.edit', compact('article'));
     }
 
     /**

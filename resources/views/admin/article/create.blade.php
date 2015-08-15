@@ -2,7 +2,8 @@
 
 @section('content')
     <h1>Nouvel Article</h1>
-    {!! Form::open() !!}
+
+    {!! Form::open(["action" => 'AdminArticleController@store']) !!}
 
         {!! Form::label("title","Titre de l'article") !!}
         {!! Form::text("title") !!}
