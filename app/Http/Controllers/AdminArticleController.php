@@ -4,6 +4,7 @@ namespace blog\Http\Controllers;
 
 use blog\Article;
 use Carbon\Carbon;
+use GrahamCampbell\Markdown\Facades\Markdown;
 use Illuminate\Http\Request;
 
 use blog\Http\Requests;
@@ -59,7 +60,8 @@ class AdminArticleController extends Controller
     public function show($id)
     {
         $article = Article::findOrFail($id);
-        return view('admin.article.show', compact('article'));
+        $articleContent = Markdown::convertToHtml($article->content);
+        return view('admin.article.show', compact('article','articleContent'));
     }
 
     /**

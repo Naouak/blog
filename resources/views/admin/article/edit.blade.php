@@ -1,5 +1,18 @@
 @extends('admin.app')
 
 @section('content')
-    {{ var_dump($article) }}
+    {!! Form::model($article, ["action" => ['AdminArticleController@edit', $article->id], "method" => "PATH"]) !!}
+
+    {!! Form::label("title","Titre de l'article") !!}
+    {!! Form::text("title") !!}
+
+    {!! Form::label("excerpt","En-tête") !!}
+    {!! Form::textarea("excerpt") !!}
+
+    {!! Form::label("content","Texte") !!}
+    {!! Form::textarea("content") !!}
+
+    {!! Form::submit("Mettre à jour l'article") !!}
+
+    {!! Form::close() !!}
 @endsection

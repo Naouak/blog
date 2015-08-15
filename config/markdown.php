@@ -25,6 +25,6 @@ return [
     |
     */
 
-    'views' => true,
+    'views' => false,
 
 ];
