@@ -4,6 +4,8 @@
 
     <h1>Liste des articles</h1>
 
+    <a href="{{ action("AdminArticleController@create") }}">Nouvel article</a>
+
     <ul>
     @foreach($articles as $article)
         <li>
