@@ -15,17 +15,19 @@ class CreateArticleTable extends Migration
         Schema::create('articles', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id',false,true);
-            $table->string('url')->unique();
             $table->text('title');
-            $table->text('excerpt')->nullable();
+            $table->string('url')->unique();
+            $table->text('excerpt')->nullable()->default(null);
             $table->longText('content');
             $table->dateTime('published_at');
+            $table->boolean('published')->default(false);
             $table->timestamps();
+            $table->softDeletes();
 
-	        $table->foreign("user_id")
-		        ->references('id')
-		        ->on('users')
-		        ->onDelete('cascade');
+            $table->foreign("user_id")
+                ->references('id')
+                ->on('users')
+                ->onDelete('cascade');
         });
     }
 
