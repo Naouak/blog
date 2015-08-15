@@ -9,6 +9,6 @@ class Article extends Model
     //
 
 	public function user() {
-		$this->hasOne("blog/User");
+		return $this->hasOne('blog\User');
 	}
 }
