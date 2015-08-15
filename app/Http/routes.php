@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::controllers([
+	'auth' => 'Auth\AuthController'
+]);
+
 Route::group(['prefix' => env('APP_ADMIN_LOCATION', 'admin'), "middleware" => "auth"], function(){
 	Route::get('/', function () {
 		return view('welcome');

@@ -144,6 +144,8 @@ return [
         blog\Providers\EventServiceProvider::class,
         blog\Providers\RouteServiceProvider::class,
 
+
+        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
     ],
 
     /*
