@@ -16,7 +16,7 @@ class CreateArticleTable extends Migration
             $table->increments('id');
             $table->integer('user_id',false,true);
             $table->text('title');
-            $table->string('url')->unique();
+            $table->string('url');
             $table->text('excerpt')->nullable()->default(null);
             $table->longText('content');
             $table->dateTime('published_at');
