@@ -14,5 +14,7 @@
 
     {!! Form::submit("Mettre à jour l'article") !!}
 
+    <a href="{{ action("AdminArticleController@show", $article->id) }}">Revenir</a>
+
     {!! Form::close() !!}
 @endsection
