@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Administration</title>
+    {!! HTML::style("css/admin/app.css") !!}
 </head>
 <body>
 
