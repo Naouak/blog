@@ -2,8 +2,11 @@
 <html lang="fr-FR">
 <head>
     <meta charset="UTF-8">
-    <title>Administration</title>
+    @section('metadata')
+        <title>Administration</title>
+    @show
     {!! HTML::style("css/admin/app.css") !!}
+    @yield('style')
 </head>
 <body>
 
@@ -11,5 +14,6 @@
         @yield('content')
     </div>
 
+    @yield('javascript')
 </body>
 </html>
