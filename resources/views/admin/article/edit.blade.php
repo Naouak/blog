@@ -1,7 +1,7 @@
 @extends('admin.app')
 
 @section('content')
-    {!! Form::model($article, ["action" => ['AdminArticleController@edit', $article->id], "method" => "PATH"]) !!}
+    {!! Form::model($article, ["action" => ['AdminArticleController@update', $article->id], "method" => "PATCH"]) !!}
 
     {!! Form::label("title","Titre de l'article") !!}
     {!! Form::text("title") !!}

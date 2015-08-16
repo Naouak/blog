@@ -85,7 +85,10 @@ class AdminArticleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        /** @var Article $article */
+        $article = Article::findOrFail($id);
+        $article->update($request->all());
+        return redirect(action("AdminArticleController@edit", $id));
     }
 
     /**
