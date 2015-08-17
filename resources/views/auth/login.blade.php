@@ -1,21 +1,26 @@
-<form method="POST" action="{{ action("Auth\\AuthController@getLogin") }}">
-    {!! csrf_field() !!}
+@extends("admin.app")
 
-    <div>
-        Email
-        <input type="email" name="email" value="{{ old('email') }}">
-    </div>
+@section("content")
+    {!! Form::open(["action" => 'Auth\AuthController@getLogin']) !!}
 
-    <div>
-        Password
-        <input type="password" name="password" id="password">
-    </div>
+        <div>
+            {!! Form::label("email", "Email") !!}
+            {!! Form::email("email", old('email')) !!}
+        </div>
 
-    <div>
-        <input type="checkbox" name="remember"> Remember Me
-    </div>
+        <div>
+            {!! Form::label('password', 'Mot de passe') !!}
+            {!! Form::password('password') !!}
+        </div>
 
-    <div>
-        <button type="submit">Login</button>
-    </div>
-</form>
+        <div>
+            {!! Form::checkbox('remember',1,null,['id' => 'remember']) !!}
+            {!! Form::label('remember', 'Se souvenir de moi') !!}
+        </div>
+
+        <div>
+            {!! Form::submit() !!}
+        </div>
+
+    {!! Form::close() !!}
+@endsection
