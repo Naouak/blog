@@ -14,8 +14,8 @@
                 <span class="tab-tag" data-target="excerpt">Édition de l'extrait</span>
             </div>
             <div class="tab-content">
-                {!! Form::textarea("content", null, ["class" => "content-editor selected"]) !!}
-                {!! Form::textarea("excerpt", null, ["class" => "excerpt-editor"]) !!}
+                {!! Form::textarea("content", null, ["class" => "content-editor selected", "id" => "content"]) !!}
+                {!! Form::textarea("excerpt", null, ["class" => "excerpt-editor", "id" => "excerpt"]) !!}
 
             </div>
         </div>
@@ -27,7 +27,8 @@
             </div>
             <div class="tab-content">
                 <div class="content-preview selected" id="content-preview">{!! Markdown::convertToHtml($article->content) !!}</div>
-                <div class="content-preview" id="excerpt-preview">{!! Markdown::convertToHtml($article->excerpt) !!}</div>
+                <div class="excerpt-preview" id="excerpt-preview">{!! Markdown::convertToHtml($article->excerpt) !!}</div>
+                <div class="notes" id="notes"> Il y aura des notes plus tard ici !</div>
             </div>
         </div>
     </div>
