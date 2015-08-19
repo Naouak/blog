@@ -5,17 +5,97 @@ h1{
 }
 
 .content{
-  background: white;
+  //background: white;
   padding: 20px;
   margin: 0 10px;
-  border: solid @main-color 1px;
+
+}
+
+.content > form {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .article-simpleform{
   display: flex;
   font-size: 2em;
+  min-height: 43px;
+  margin: 5px;
 }
 
 .article-form-title{
   flex: 1;
+}
+
+.article-form-content{
+  display: flex;
+  flex: 1;
+}
+
+.article-form-content > *{
+  flex: 1;
+  margin: 5px;
+}
+
+.article-form-content textarea{
+  font-family: monospace;
+  width: 100%;
+  padding: 10px;
+  font-size: 1.2em;
+}
+
+.content-preview{
+  padding: 10px;
+  border: solid 1px @main-color;
+  background: white;
+  overflow: auto;
+}
+
+input[type=submit]{
+  background: white;
+}
+
+.column{
+  display: flex;
+  flex-direction: column;
+}
+
+.column .tab-strip{
+  display: flex;
+  align-content: flex-end;
+  justify-content: flex-start;
+}
+
+.column .tab-tag{
+  display: block;
+  background: white;
+  padding: 5px;
+  border: solid 1px @main-color;
+  margin-right: 5px;
+  margin-bottom: -2px;
+  cursor: pointer;
+}
+
+.column .tab-tag.selected{
+  border-bottom-color: white;
+  z-index: 1;
+}
+
+.column .tab-content{
+  flex: 1;
+  position: relative;
+  overflow: auto;
+}
+
+.column .tab-content > *{
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.column .tab-content > :not(.selected){
+  display: none;
 }
