@@ -51,6 +51,6 @@
 @endsection
 
 @section('javascript')
-    {!! HTML::script("contrib/js/marked.js") !!}
+    {!! HTML::script("contrib/js/commonmark.js") !!}
     {!! HTML::script("js/admin/editor.js") !!}
 @endsection

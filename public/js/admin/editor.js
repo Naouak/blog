@@ -28,9 +28,14 @@
     [].forEach.call(document.querySelectorAll(".column"),tabs);
 
 
+    var Markdown = {
+        reader: new commonmark.Parser(),
+        writer: new commonmark.HtmlRenderer()
+    };
+
     function markdownWatcher(source, dest){
         source.addEventListener("input", function(){
-            dest.innerHTML = marked(source.value);
+            dest.innerHTML = Markdown.writer.render(Markdown.reader.parse(source.value));
         })
     }
 
