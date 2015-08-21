@@ -6,6 +6,7 @@
     <div class="article-simpleform">
         {!! Form::text("title", null, ["class" => "article-form-title"]) !!}
         {!! Form::submit("Sauvegarder") !!}
+        {!! HTML::linkAction("AdminArticleController@show", "Retour", null, ["class" => "form-button"]) !!}
     </div>
     <div class="article-form-content">
         <div class="column column-left">
