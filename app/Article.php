@@ -19,4 +19,10 @@ class Article extends Model
 		/** @var $this->published_at Carbon */
 		return $this->published && $this->published_at->isPast();
 	}
+
+	public function newQuery() {
+		return parent::newQuery()->orderBy('published_at', 'DESC');
+	}
+
+
 }
