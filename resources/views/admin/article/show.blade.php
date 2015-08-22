@@ -10,3 +10,7 @@
         {!! $articleContent !!}
     </article>
 @endsection
+
+@section("style")
+    {!! HTML::style("css/admin/article.css") !!}
+@endsection

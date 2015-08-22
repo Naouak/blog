@@ -40,7 +40,7 @@
     }
 
     var textEditor = document.querySelector(".content-editor");
-    var preview = document.querySelector(".content-preview");
+    var preview = document.querySelector(".content-preview article");
     markdownWatcher(textEditor, preview);
-    markdownWatcher(document.querySelector(".excerpt-editor"), document.querySelector(".excerpt-preview"));
+    markdownWatcher(document.querySelector(".excerpt-editor"), document.querySelector(".excerpt-preview article"));
 }());

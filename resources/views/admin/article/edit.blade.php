@@ -27,8 +27,12 @@
                 <span class="tab-tag" data-target="notes">Notes</span>
             </div>
             <div class="tab-content">
-                <div class="content-preview selected" id="content-preview">{!! Markdown::convertToHtml($article->content) !!}</div>
-                <div class="excerpt-preview" id="excerpt-preview">{!! Markdown::convertToHtml($article->excerpt) !!}</div>
+                <div class="content-preview selected" id="content-preview">
+                    <article>{!! Markdown::convertToHtml($article->content) !!}</article>
+                </div>
+                <div class="excerpt-preview" id="excerpt-preview">
+                    <article>{!! Markdown::convertToHtml($article->excerpt) !!}</article>
+                </div>
                 <div class="notes" id="notes"> Il y aura des notes plus tard ici !</div>
             </div>
         </div>
