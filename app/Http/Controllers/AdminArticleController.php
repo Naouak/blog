@@ -92,6 +92,17 @@ class AdminArticleController extends Controller
     }
 
     /**
+     * Show the form for configuring articles Details
+     *
+     * @param $id
+     * @return \Illuminate\View\View
+     */
+    public function config($id){
+        $article = Article::findOrFail($id);
+        return view('admin.article.config', compact('article'));
+    }
+
+    /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
