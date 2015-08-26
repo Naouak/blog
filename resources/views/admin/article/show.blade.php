@@ -9,6 +9,10 @@
     {!! Form::model($article, ["action" => ['AdminArticleController@update', $article->id], "method" => "PATCH"]) !!}
         {!! Form::hidden("return","show") !!}
         <div>
+            {!! Form::label("url", "URL de l'article") !!}
+            {!! Form::text("url") !!}
+        </div>
+        <div>
             {!! Form::checkbox("published",1,null,['id' => 'published']) !!}
             {!! Form::label("published", "Publié") !!}
         </div>
