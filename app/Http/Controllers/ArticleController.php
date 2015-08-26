@@ -45,12 +45,14 @@ class ArticleController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  string  $url
      * @return Response
      */
-    public function show($id)
+    public function show($url)
     {
-        //
+        $article = Article::where("url", $url)->firstOrFail();
+
+        return view("article.show", compact("article"));
     }
 
     /**
