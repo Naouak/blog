@@ -11,13 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', "ArticleController@index");
+Route::resource("article", "ArticleController");
 
-Route::controllers([
-	'auth' => 'Auth\AuthController'
-]);
+Route::controllers(['auth' => 'Auth\AuthController']);
 
 Route::group(['prefix' => env('APP_ADMIN_LOCATION', 'admin'), "middleware" => "auth"], function(){
 	Route::get('/', "AdminController@index");

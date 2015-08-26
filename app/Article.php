@@ -33,5 +33,8 @@ class Article extends Model
 		return parent::newQuery()->orderBy('published_at', 'DESC');
 	}
 
+	public function scopePublished($query){
+		return $query->where("published", 1)->whereRaw("published_at < NOW()");
+	}
 
 }
