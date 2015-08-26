@@ -28,10 +28,10 @@
             </div>
             <div class="tab-content">
                 <div class="content-preview selected" id="content-preview">
-                    <article>{!! Markdown::convertToHtml($article->content) !!}</article>
+                    <article>{!! $article->content_html !!}</article>
                 </div>
                 <div class="excerpt-preview" id="excerpt-preview">
-                    <article>{!! Markdown::convertToHtml($article->excerpt) !!}</article>
+                    <article>{!! $article->excerpt_html !!}</article>
                 </div>
                 <div class="notes" id="notes"> Il y aura des notes plus tard ici !</div>
             </div>

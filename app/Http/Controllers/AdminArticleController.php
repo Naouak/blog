@@ -60,7 +60,6 @@ class AdminArticleController extends Controller
     public function show($id)
     {
         $article = Article::findOrFail($id);
-        $articleContent = Markdown::convertToHtml($article->content);
         return view('admin.article.show', compact('article','articleContent'));
     }
 
@@ -88,6 +87,12 @@ class AdminArticleController extends Controller
         /** @var Article $article */
         $article = Article::findOrFail($id);
         $article->update($request->all());
+
+        $return = $request->get("return");
+        if($return == "show"){
+            return redirect(action("AdminArticleController@show", $id));
+        }
+
         return redirect(action("AdminArticleController@edit", $id));
     }
 
