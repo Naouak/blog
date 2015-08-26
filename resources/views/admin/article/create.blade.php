@@ -1,14 +1,16 @@
 @extends('admin.app')
 
 @section('content')
-    <h1>Nouvel Article</h1>
+    <h1>Créer un article</h1>
 
     {!! Form::open(["action" => 'AdminArticleController@store']) !!}
-
-        {!! Form::label("title","Titre de l'article") !!}
-        {!! Form::text("title") !!}
-
-        {!! Form::submit("Créer l'article") !!}
-
+        <div class="article-simpleform">
+            {!! Form::text("title", null, ["placeholder" => "Mon super article !", "class" => "article-form-title"]) !!}
+            {!! Form::submit("Créer l'article") !!}
+        </div>
     {!! Form::close() !!}
+@endsection
+
+@section("style")
+    {!! HTML::style("css/admin/article.css") !!}
 @endsection

@@ -1,0 +1,51 @@
+@import "color";
+
+.login-form {
+  width: 400px;
+  margin: 100px auto;
+  padding: 20px;
+  border: solid @main-color 1px;
+  color: @main-color;
+  background: white;
+}
+
+.login-form h1{
+  margin: 0;
+
+  text-transform: uppercase;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.login-form label{
+  box-sizing: border-box;
+  display: inline-block;
+  width: 50%;
+  text-align: right;
+  padding: 10px;
+}
+
+.login-form input{
+  display: inline-block;
+  width: 50%;
+}
+
+.login-form input[type=checkbox]{
+  width: auto;
+  margin-left: 50%;
+}
+
+.login-form input[type=checkbox] + label{
+  text-align: left;
+  width: auto;
+}
+
+.login-form .submit{
+  text-align: right;
+}
+
+.login-form input[type=submit]{
+  padding: 5px 20px;
+  background: transparent;
+  width: 100%;
+}

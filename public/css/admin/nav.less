@@ -1,0 +1,45 @@
+@import "color";
+
+body{
+  margin-top: 50px;
+}
+
+.main-nav{
+  position: absolute;
+  top: 0;
+  left : 0;
+  right: 0;
+  background : @main-color;
+  color: white;
+  display:flex;
+}
+
+.main-nav a{
+  color: inherit;
+  text-decoration: none;
+}
+
+.main-nav > ul{
+  padding: 0;
+  margin: 0;
+  flex: 1 0 0;
+}
+
+.main-nav > ul > li{
+  list-style: none;
+  flex: 1 0 0;
+}
+
+.nav-element{
+  display: inline-block;
+}
+
+.nav-element a, .nav-element .title{
+  display: block;
+  padding: 10px;
+}
+
+.sys-nav {
+  text-align: right;
+  flex: auto;
+}

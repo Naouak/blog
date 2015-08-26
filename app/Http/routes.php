@@ -22,4 +22,5 @@ Route::controllers([
 Route::group(['prefix' => env('APP_ADMIN_LOCATION', 'admin'), "middleware" => "auth"], function(){
 	Route::get('/', "AdminController@index");
 	Route::resource("article", "AdminArticleController");
+	Route::get('article/{id}/config', "AdminArticleController@config");
 });

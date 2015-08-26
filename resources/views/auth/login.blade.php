@@ -1,21 +1,27 @@
-<form method="POST" action="{{ action("Auth\\AuthController@getLogin") }}">
-    {!! csrf_field() !!}
+@extends("admin.app")
 
-    <div>
-        Email
-        <input type="email" name="email" value="{{ old('email') }}">
-    </div>
+@section("content")
+    {!! Form::open(["action" => 'Auth\AuthController@getLogin', "class" => "login-form"]) !!}
+            <h1>Connexion requise</h1>
+            <div>
+                {!! Form::label("email", "Email") !!}{!! Form::email("email", old('email'), ["placeholder" => "azure@diamond.com"]) !!}
+            </div>
 
-    <div>
-        Password
-        <input type="password" name="password" id="password">
-    </div>
+            <div>
+                {!! Form::label('password', 'Mot de passe') !!}{!! Form::password('password', ["placeholder" => "hunter2"]) !!}
+            </div>
 
-    <div>
-        <input type="checkbox" name="remember"> Remember Me
-    </div>
+            <div>
+                {!! Form::checkbox('remember',1,null,['id' => 'remember']) !!}{!! Form::label('remember', 'Se souvenir de moi') !!}
+            </div>
 
-    <div>
-        <button type="submit">Login</button>
-    </div>
-</form>
+            <div class="submit">
+                {!! Form::submit("Connexion") !!}
+            </div>
+
+    {!! Form::close() !!}
+@endsection
+
+@section('style')
+    {!! HTML::style('css/admin/auth.css') !!}
+@endsection
