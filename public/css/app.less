@@ -1,8 +1,35 @@
 @import (inline) "../contrib/css/normalize.css";
 
+@import url(https://fonts.googleapis.com/css?family=Noto+Serif&subset=latin,greek,greek-ext,vietnamese,cyrillic-ext,latin-ext,cyrillic);
+
 @import "color";
 
 body{
+  font-family: 'Noto Serif', serif;
   color: @main-color;
   background: white;
+}
+
+nav{
+  width: 700px;
+  font-size: 1.8em;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin: 10px auto;
+}
+
+nav > *{
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+nav .title{
+  font-size: 1.2em;
+}
+
+nav a{
+  text-decoration: none;
+  color: inherit;
 }

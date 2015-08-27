@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     @section('metadata')
-        <title>Blog</title>
+        <title>Quentin.ninja - Développeur, Gamer et Otaku</title>
     @show
     {!! HTML::style("css/app.css") !!}
     @yield('style')
@@ -12,7 +12,8 @@
 
 @section('nav')
     <nav class="main-nav">
-        <div class="nav-element"><span class="title">Blog</span></div>
+        <div class="title"><a href="{{ url("/") }}">Quentin.ninja</a></div>
+        <div>Développeur, Gamer et Otaku</div>
     </nav>
 @show
 
