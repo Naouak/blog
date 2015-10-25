@@ -27,7 +27,7 @@ class Article extends Model
 		if($this->content_type == "markdown"){
 			return Markdown::convertToHtml($this->excerpt);
 		}
-		return $this->content;
+		return $this->excerpt;
 	}
 
 	public function getAvailableAttribute(){
