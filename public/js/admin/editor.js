@@ -33,14 +33,18 @@
         writer: new commonmark.HtmlRenderer()
     };
 
-    function markdownWatcher(source, dest){
+    function contentWatcher(source, dest){
         source.addEventListener("input", function(){
-            dest.innerHTML = Markdown.writer.render(Markdown.reader.parse(source.value));
+            if(source.dataset.contentType == "markdown"){
+                dest.innerHTML = Markdown.writer.render(Markdown.reader.parse(source.value));
+            } else {
+                dest.innerHTML = source.value;
+            }
         })
     }
 
     var textEditor = document.querySelector(".content-editor");
     var preview = document.querySelector(".content-preview article");
-    markdownWatcher(textEditor, preview);
-    markdownWatcher(document.querySelector(".excerpt-editor"), document.querySelector(".excerpt-preview article"));
+    contentWatcher(textEditor, preview);
+    contentWatcher(document.querySelector(".excerpt-editor"), document.querySelector(".excerpt-preview article"));
 }());

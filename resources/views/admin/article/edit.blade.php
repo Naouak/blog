@@ -15,8 +15,8 @@
                 <span class="tab-tag" data-target="excerpt">Édition de l'extrait</span>
             </div>
             <div class="tab-content">
-                {!! Form::textarea("content", null, ["class" => "content-editor selected", "id" => "content"]) !!}
-                {!! Form::textarea("excerpt", null, ["class" => "excerpt-editor", "id" => "excerpt"]) !!}
+                {!! Form::textarea("content", null, ["class" => "content-editor selected", "id" => "content", "data-content-type" => $article->content_type]) !!}
+                {!! Form::textarea("excerpt", null, ["class" => "excerpt-editor", "id" => "excerpt", "data-content-type" => $article->content_type]) !!}
 
             </div>
         </div>

@@ -45,6 +45,7 @@ class AdminArticleController extends Controller
         ]);
         $article = new Article($request->all());
         $article->published_at = Carbon::now();
+        $article->content_type = 'html';
         $user = $request->user();
         $user->articles()->save($article);
 

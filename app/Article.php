@@ -17,11 +17,17 @@ class Article extends Model
 	}
 
 	public function getContentHtmlAttribute(){
-		return Markdown::convertToHtml($this->content);
+		if($this->content_type == "markdown"){
+			return Markdown::convertToHtml($this->content);
+		}
+		return $this->content;
 	}
 
 	public function getExcerptHtmlAttribute(){
-		return Markdown::convertToHtml($this->excerpt);
+		if($this->content_type == "markdown"){
+			return Markdown::convertToHtml($this->excerpt);
+		}
+		return $this->content;
 	}
 
 	public function getAvailableAttribute(){
