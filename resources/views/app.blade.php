@@ -5,6 +5,9 @@
     @section('metadata')
         <title>Quentin.ninja - Développeur, Gamer et Otaku</title>
     @show
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     {!! HTML::style("css/app.css") !!}
     @yield('style')
 </head>
@@ -13,7 +16,7 @@
 @section('nav')
     <nav class="main-nav">
         <div class="title"><a href="{{ url("/") }}">Quentin.ninja</a></div>
-        <div>Développeur, Gamer et Otaku</div>
+        <div class="tagline">Développeur, Gamer et Otaku</div>
     </nav>
 @show
 

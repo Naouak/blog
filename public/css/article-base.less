@@ -3,10 +3,11 @@ article{
   font-family: 'Noto Serif', serif;
   font-size: 20px;
   line-height: 1.5em;
-  max-width: 700px;
+
 
   padding: 10px;
   margin: auto;
+  margin-bottom: 50px;
 
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
@@ -14,11 +15,50 @@ article{
   -o-hyphens: auto;
   hyphens: auto;
 
+  .content{
+    max-width: 700px;
+    margin: auto;
+  }
+
   a{
     text-decoration: none;
     color: inherit;
     border-bottom: solid 1px @main-color;
   }
+}
+
+article.article-excerpt{
+  max-width: 700px;
+}
+
+article .article-header{
+  margin-bottom: 15px;
+}
+
+article .article-header h1, article .article-header h2{
+  margin-bottom: 0;
+}
+
+article .article-header h1{
+  font-size: 5vw;
+  line-height: normal;
+  text-align: center;
+}
+
+@media (max-width: 750px) {
+  article .article-header h1{
+    font-size: 8vw;
+    line-height: normal;
+    text-align: center;
+  }
+}
+
+article .publication_infos{
+  font-size: 90%;
+  font-style: italic;
+  text-align: right;
+  max-width: 700px;
+  margin: auto;
 }
 
 article > img{

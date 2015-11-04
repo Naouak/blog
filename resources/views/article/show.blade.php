@@ -3,7 +3,7 @@
 @section('content')
     <article>
         <div class="article-header">
-            <h2>{{ $article->title }}</h2>
+            <h1>{{ $article->title }}</h1>
             <div class="publication_infos">Publié {{ $article->published_at->diffForHumans() }} par {{ $article->user->name }}</div>
         </div>
         <div class="content">
