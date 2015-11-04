@@ -13,6 +13,7 @@
 
 Route::get('/', "ArticleController@index");
 Route::resource("article", "ArticleController");
+Route::get('/feed', "ArticleController@feed");
 
 Route::controllers(['auth' => 'Auth\AuthController']);
 

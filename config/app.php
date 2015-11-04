@@ -148,6 +148,7 @@ return [
 
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         GrahamCampbell\Markdown\MarkdownServiceProvider::class,
+        Roumen\Feed\FeedServiceProvider::class
     ],
 
     /*
@@ -198,6 +199,7 @@ return [
         'Form'      => Illuminate\Html\FormFacade::class,
         'HTML'      => Illuminate\Html\HtmlFacade::class,
         'Markdown'  => GrahamCampbell\Markdown\Facades\Markdown::class,
+        'Feed'      => Roumen\Feed\Facades\Feed::class
 
     ],
 
