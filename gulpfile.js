@@ -12,5 +12,15 @@ var elixir = require('laravel-elixir');
  */
 
 elixir(function(mix) {
-    mix.sass('app.scss');
+    var files = [
+        'app',
+        'article',
+        'admin/app',
+        'admin/article',
+        'admin/auth',
+        'admin/form',
+        'admin/nav'
+    ];
+
+    files.forEach(file => mix.less(file+".less","public/css/"+file+".css"));
 });
