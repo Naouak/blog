@@ -52,10 +52,6 @@ h1{
   overflow: auto;
 }
 
-input[type=submit], .form-button{
-  background: white;
-}
-
 .column{
   display: flex;
   flex-direction: column;
@@ -100,6 +96,12 @@ input[type=submit], .form-button{
   display: none;
 }
 
+.tab-panel{
+  background: @background-color;
+  border: solid 1px;
+  padding: 5px;
+}
+
 .article-list{
   width: 100%;
   background: white;
@@ -120,10 +122,15 @@ input[type=submit], .form-button{
   background-color: @neutral-color;
 }
 
-.article-list a{
+.article-list tbody a{
   display: block;
   text-decoration: none;
   color: inherit;
+}
+
+.article-list tfoot{
+  border-top: solid 1px @main-color;
+  text-align: right;
 }
 
 .action-bar{

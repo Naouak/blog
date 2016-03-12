@@ -16,7 +16,7 @@
             @foreach($articles as $article)
                 <tr>
                     <td>
-                        <a href="{{ action("AdminArticleController@show", $article->id) }}">
+                        <a href="{{ action("AdminArticleController@edit", $article->id) }}">
                             {{ $article->title }}
                         </a>
                     </td>
@@ -35,11 +35,14 @@
                 </tr>
             @endforeach
         </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3">
+                    <a href="{{ action("AdminArticleController@create") }}" class="button-link">Nouvel article</a>
+                </td>
+            </tr>
+        </tfoot>
     </table>
-
-    <div class="action-bar">
-        <a href="{{ action("AdminArticleController@create") }}" class="form-button">Nouvel article</a>
-    </div>
 
 @endsection
 

@@ -1,10 +1,11 @@
 @extends('admin.app')
 
 @section('content')
-    <h1>{{ $article->title  }}</h1>
-
-    <a href="{{ action('AdminArticleController@index') }}">Liste des articles</a>
-    <a href="{{ action('AdminArticleController@edit',$article->id) }}">Modifier l'article</a>
+    <h1><a class="button-link" href="{{ action('AdminArticleController@index') }}">&#8249;</a> {{ $article->title  }}</h1>
+        <nav class="inner-nav">
+        <a href="{{ action('AdminArticleController@index') }}">Liste des articles</a>
+        <a href="{{ action('AdminArticleController@edit',$article->id) }}">Modifier l'article</a>
+    </nav>
 
     {!! Form::model($article, ["action" => ['AdminArticleController@update', $article->id], "method" => "PATCH"]) !!}
         {!! Form::hidden("return","show") !!}

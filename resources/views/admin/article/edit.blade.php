@@ -4,20 +4,34 @@
     {!! Form::model($article, ["action" => ['AdminArticleController@update', $article->id], "method" => "PATCH"]) !!}
 
     <div class="article-simpleform">
+        <a class="button-link" href="{{ action('AdminArticleController@index') }}">&#8249;</a>
         {!! Form::text("title", null, ["class" => "article-form-title"]) !!}
-        {!! Form::submit("Sauvegarder") !!}
-        {!! HTML::linkAction("AdminArticleController@show", "Retour", null, ["class" => "form-button"]) !!}
+        {!! Form::submit("Sauvegarder", ["class" => "button-link"]) !!}
     </div>
     <div class="article-form-content">
         <div class="column column-left">
             <div class="tab-strip">
                 <span class="tab-tag selected" data-target="content">Édition du texte</span>
                 <span class="tab-tag" data-target="excerpt">Édition de l'extrait</span>
+                <span class="tab-tag" data-target="article-config">Configuration</span>
             </div>
             <div class="tab-content">
                 {!! Form::textarea("content", null, ["class" => "content-editor selected", "id" => "content", "data-content-type" => $article->content_type]) !!}
                 {!! Form::textarea("excerpt", null, ["class" => "excerpt-editor", "id" => "excerpt", "data-content-type" => $article->content_type]) !!}
-
+                <div class="tab-panel" id="article-config">
+                    <div>
+                        {!! Form::label("url", "URL de l'article") !!}
+                        {!! Form::text("url") !!}
+                    </div>
+                    <div>
+                        {!! Form::checkbox("published",1,null,['id' => 'published']) !!}
+                        {!! Form::label("published", "Publié") !!}
+                    </div>
+                    <div>
+                        {!! Form::label("published_at", "Publication le :") !!}
+                        {!! Form::input("datetime","published_at") !!}
+                    </div>
+                </div>
             </div>
         </div>
         <div class="column column-right">
@@ -33,7 +47,7 @@
                 <div class="excerpt-preview" id="excerpt-preview">
                     <article>{!! $article->excerpt_html !!}</article>
                 </div>
-                <div class="notes" id="notes"> Il y aura des notes plus tard ici !</div>
+                {!! Form::textarea("notes", null, ["class" => "content-editor", "id" => "notes", "data-content-type" => $article->content_type]) !!}
             </div>
         </div>
     </div>
