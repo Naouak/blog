@@ -2,8 +2,6 @@
 
 namespace blog;
 
-use Carbon\Carbon;
-use GrahamCampbell\Markdown\Facades\Markdown;
 use Illuminate\Database\Eloquent\Model;
 
 class Article extends Model
@@ -17,16 +15,10 @@ class Article extends Model
 	}
 
 	public function getContentHtmlAttribute(){
-		if($this->content_type == "markdown"){
-			return Markdown::convertToHtml($this->content);
-		}
 		return $this->content;
 	}
 
 	public function getExcerptHtmlAttribute(){
-		if($this->content_type == "markdown"){
-			return Markdown::convertToHtml($this->excerpt);
-		}
 		return $this->excerpt;
 	}
 

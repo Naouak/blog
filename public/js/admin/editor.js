@@ -27,19 +27,9 @@
     }
     [].forEach.call(document.querySelectorAll(".column"),tabs);
 
-
-    var Markdown = {
-        reader: new commonmark.Parser(),
-        writer: new commonmark.HtmlRenderer()
-    };
-
     function contentWatcher(source, dest){
         source.addEventListener("input", function(){
-            if(source.dataset.contentType == "markdown"){
-                dest.innerHTML = Markdown.writer.render(Markdown.reader.parse(source.value));
-            } else {
                 dest.innerHTML = source.value;
-            }
         })
     }
 
