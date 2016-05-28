@@ -13,6 +13,8 @@
             <div class="readmore"><a href="{{ action("ArticleController@show", $article->url) }}">Lire l'article &gt;&gt;</a></div>
         </article>
     @endforeach
+
+    {!! $articles->render(new \blog\Presenter\SimplePagination($articles)) !!}
 @endsection
 
 @section('style')

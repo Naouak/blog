@@ -1,0 +1,16 @@
+@import "color";
+
+.article-link(){
+  text-decoration: none;
+  color: inherit;
+  border-bottom: solid 1px @main-color;
+
+  &:hover{
+    background-color: darken(@background-color,5%);
+  }
+}
+
+.article-center(){
+  max-width: 700px;
+  margin: auto;
+}
