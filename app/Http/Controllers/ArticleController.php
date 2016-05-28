@@ -19,7 +19,7 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $articles = Article::published()->simplePaginate(10);
+        $articles = Article::published()->simplePaginate(5);
         return view("index", compact("articles"));
     }
 
